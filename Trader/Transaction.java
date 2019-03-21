@@ -1,5 +1,4 @@
-package com.Trader;
-
+package Trader;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -56,31 +55,31 @@ public class Transaction {
         );
 
 
-       List<Integer> trasactionsIn2011 = transactionList.stream().filter(t->t.getYear()==2011).map(Transaction::getValue).sorted().collect(Collectors.toList());
-       trasactionsIn2011.forEach(System.out::println);
+       List<Integer> transactionsIn2011 = transactionList.stream().filter(t->t.getYear()==2011).map(Transaction::getValue).sorted().collect(Collectors.toList());
+        transactionsIn2011.forEach(System.out::println);
 
        System.out.println("========================");
 
-       Set<String> Uniquecities= transactionList.stream()
+       Set<String> uniqueCities = transactionList.stream()
                                                   .map(T -> T.getTrader().getCity())
                                                   .collect(Collectors.toCollection(TreeSet::new));
-       Uniquecities.forEach(System.out::println);
+        uniqueCities.forEach(System.out::println);
 
        System.out.println("================================");
 
-       List<String> tradersByname= transactionList.stream()
+       List<String> tradersByName = transactionList.stream()
                                                   .filter(T ->T.getTrader().getCity().equalsIgnoreCase("Cambridge"))
                                                   .map(T ->T.getTrader().getName())
                                                   .distinct()
                                                   .sorted()
                                                   .collect(Collectors.toList());
-        tradersByname.forEach(System.out::println);
+        tradersByName.forEach(System.out::println);
 
         System.out.println("===================================");
 
-        List<String> tradersnames= transactionList.stream().map(t->t.getTrader().getName()).distinct().sorted().collect(Collectors.toList());
+        List<String> tradersNames= transactionList.stream().map(t->t.getTrader().getName()).distinct().sorted().collect(Collectors.toList());
 
-        tradersnames.forEach(System.out::println);
+        tradersNames.forEach(System.out::println);
 
         System.out.println("===============================");
 
@@ -90,11 +89,11 @@ public class Transaction {
 
         System.out.println("==============================");
 
-        List<Integer> TrasactionValuesofCambridge = transactionList.stream().filter(T->T.getTrader().getCity().equalsIgnoreCase("cambridge"))
+        List<Integer> transactionValuesOfCambridge = transactionList.stream().filter(T->T.getTrader().getCity().equalsIgnoreCase("cambridge"))
                                                                             .map(Transaction::getValue)
                                                                             .collect(Collectors.toList());
 
-         TrasactionValuesofCambridge.forEach(System.out::println);
+        transactionValuesOfCambridge.forEach(System.out::println);
 
 
         System.out.println("===============================");

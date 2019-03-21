@@ -1,4 +1,4 @@
-package com.Trader;
+package Trader;
 
 public class Trader {
 
